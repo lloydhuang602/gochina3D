@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>财事缘健福推算器（全球版）</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body {
+  font-family: "Noto Sans SC", sans-serif;
+  background: #faf8f5;
+  color: #333;
+  margin: 20px;
+}
+.container { display: flex; gap: 20px; }
+.left {
+  width: 320px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.right {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+input, select, button {
+  width: 100%;
+  padding: 6px;
+  margin: 6px 0;
+  font-size: 14px;
+}
+button {
+  background: #c85c32;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover { background: #b24d28; }
+#log {
+  font-size: 13px;
+  color: #555;
+  margin-top: 8px;
+  white-space: pre-line;
+  background:#f8f8f8;
+  border-radius:6px;
+  padding:8px;
+  height: 220px;
+  overflow-y: auto;
+}
+#interpretation {
+  margin-top: 20px;
+  padding: 12px 16px;
+  background: #fdf8f4;
+  border-radius: 6px;
+  border-left: 4px solid #c85c32;
+  font-size: 14px;
+  line-height: 1.7em;
+}
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* 中间报告区 */
+.center {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  min-width: 420px;
+}
+
+/* 右侧雷达图区 */
+.right {
+  width: 400px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+/* 雷达图区上方信息 */
+#chart-info {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #333;
+}
+#bazi-text {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+#wuxing-text {
+  color: #5a4333;
+  font-weight: 500;
+}
+#wuxing-value {
+  display: block;
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+</style>
+</head>
+<body>
+<h2>财事缘健福推算器（全球版）</h2>
+
+<div class="container">
+  <div class="left">
+    <label>出生日期：</label>
+    <input type="date" id="birthDate" value="1978-03-31">
+    <label>出生时间：</label>
+    <input type="time" id="birthTime" value="22:00">
+    <label>性别：</label>
+    <select id="genderSelect">
+      <option value="M" selected>男性</option>
+      <option value="F">女性</option>
+    </select>
+    <label>国家：</label>
+    <select id="countrySelect"></select>
+    <label>城市：</label>
+    <select id="citySelect"></select>
+    <button id="calcBtn">开始推算</button>
+    <div id="log">正在加载城市数据，请稍候…</div>
+  </div>
+
+  <!-- 新增中间列：报告区 -->
+  <div class="center">
+    <div id="result"></div>
+    <div id="interpretation">（命理报告将在此显示）</div>
+  </div>
+
+<div class="right">
+<div id="chart-info">
+  <div id="bazi-text">你的八字：<span id="bazi-value"></span></div>
+  <div id="wuxing-text">你的基础运势（五行能量）：<br><span id="wuxing-value"></span></div>
+</div>
+
+<!-- 🌈 新增五行进度条容器（进度条会在这里显示） -->
+<div id="wuxing_result" style="margin-top:10px; text-align:left;"></div>
+
+<canvas id="chart" width="360" height="300"></canvas>
+
+</div>
+<hr>
+<div id="practice_items_display" style="margin-top:10px;"></div>
+ 
+ 
+</div>
+
+<script>
+let worldCities = [];
+let chart;
+let libraries = {};
+let practiceModules = {};
+let practiceFinalEndings = [];
+let practiceItems = {};
+
+// 五库加载
+async function loadLibraries(){
+  const files = ["wuxing_traits","career_advice","life_stage","practice_tips","combo_relations"];
+  for(const f of files){
+    const res = await fetch(`./data/${f}.json`);
+    libraries[f] = await res.json();
+  }
+  console.log("✅ 五库加载完成");
+}
+
+// 城市数据加载
+fetch("./data/worldcities50000.json")
+  .then(r=>r.json())
+  .then(data=>{
+    worldCities=data;
+    const countries=[...new Set(worldCities.map(c=>c.country))].sort();
+    const sel=document.getElementById("countrySelect");
+    countries.forEach(country=>{
+      const opt=document.createElement("option");
+      opt.value=country;
+      opt.text=country;
+      sel.appendChild(opt);
+    });
+    sel.value="China";
+    populateCities("China");
+    document.getElementById("log").textContent="🌍 城市数据加载完成。";
+  })
+  .catch(e=>{
+    document.getElementById("log").textContent="❌ 城市数据加载失败：" + e;
+  });
+
+// 国家变化时更新城市
+document.getElementById("countrySelect").addEventListener("change",e=>{
+  populateCities(e.target.value);
+});
+
+function populateCities(countryName){
+  const cities=worldCities.filter(c=>c.country===countryName)
+    .sort((a,b)=>b.pop-a.pop);
+  const citySel=document.getElementById("citySelect");
+  citySel.innerHTML="";
+  cities.forEach(c=>{
+    const opt=document.createElement("option");
+    opt.value=c.city;
+    opt.text=c.city;
+    citySel.appendChild(opt);
+  });
+}
+
+// 干支计算
+const GAN=["甲","乙","丙","丁","戊","己","庚","辛","壬","癸"];
+const ZHI=["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"];
+const WUXING_GAN=["木","木","火","火","土","土","金","金","水","水"];
+const WUXING_ZHI=["水","土","木","木","土","火","火","土","金","金","土","水"];
+
+function calcTrueSolarTime(dateStr,timeStr,lon){
+  const [hour,minute]=timeStr.split(":").map(Number);
+  const date=new Date(dateStr+"T"+timeStr+":00");
+  const utcOffset=-date.getTimezoneOffset()/60;
+  const solarOffset=(lon-utcOffset*15)/15;
+  const localSolarTime=hour+minute/60+solarOffset;
+  const correctedHour=(localSolarTime%24+24)%24;
+  const dayShift=Math.floor(localSolarTime/24);
+  const trueDate=new Date(date.getTime()+dayShift*24*3600*1000);
+  return {hour:correctedHour,date:trueDate,offset:solarOffset};
+}
+
+function toJulianDay(y,m,d){
+  let a=Math.floor((14-m)/12);
+  let y1=y+4800-a;
+  let m1=m+12*a-3;
+  return d+Math.floor((153*m1+2)/5)+365*y1+Math.floor(y1/4)-Math.floor(y1/100)+Math.floor(y1/400)-32045;
+}
+
+function getGanZhi(y,m,d,hour){
+  const cyclicalYear=(y-4)%60;
+  const yGan=GAN[cyclicalYear%10], yZhi=ZHI[cyclicalYear%12];
+  const cyclicalMonth=((y-1900)*12+m+12)%60;
+  const mGan=GAN[cyclicalMonth%10], mZhi=ZHI[cyclicalMonth%12];
+  const jd=toJulianDay(y,m,d);
+  const cyclicalDay=(jd-toJulianDay(1900,1,1)+60)%60;
+  const dGan=GAN[cyclicalDay%10], dZhi=ZHI[cyclicalDay%12];
+  const idxGan=GAN.indexOf(dGan);
+  const hZhiIndex=Math.floor((hour+1)/2)%12;
+  const hZhi=ZHI[hZhiIndex];
+  const hGan=GAN[(idxGan*2+hZhiIndex)%10];
+  return {year:yGan+yZhi+"年",month:mGan+mZhi+"月",day:dGan+dZhi+"日",hour:hGan+hZhi+"时",hZhiIndex};
+}
+
+document.getElementById("calcBtn").addEventListener("click",async ()=>{
+  if(Object.keys(libraries).length===0) await loadLibraries();
+  const log=document.getElementById("log");
+  log.textContent="🟡 正在计算，请稍候…\n";
+
+  const date=document.getElementById("birthDate").value;
+  const time=document.getElementById("birthTime").value;
+  const gender=document.getElementById("genderSelect").value;
+  const country=document.getElementById("countrySelect").value;
+  const city=document.getElementById("citySelect").value;
+
+  let matched=worldCities.find(c=>c.city===city && c.country===country);
+  if(!matched){
+    const fallback=worldCities.filter(c=>c.country===country).sort((a,b)=>b.pop-a.pop)[0];
+    matched=fallback;
+    log.textContent+=`⚠️ 城市数据未匹配，自动使用该国主要城市：${matched.city}\n`;
+  }
+
+  if(matched.country!==country){
+    const sameCountry=worldCities.filter(c=>c.country===country).sort((a,b)=>b.pop-a.pop)[0];
+    log.textContent+=`⚠️ 城市与国家不符，已改为：${sameCountry.city} (${country})\n`;
+    matched=sameCountry;
+  }
+
+  const {hour,date:trueDate,offset}=calcTrueSolarTime(date,time,matched.lon);
+  const y=trueDate.getFullYear(), m=trueDate.getMonth()+1, d=trueDate.getDate();
+  const gz=getGanZhi(y,m,d,hour);
+
+  const wcount={木:0,火:0,土:0,金:0,水:0};
+  [gz.year,gz.month,gz.day,gz.hour].forEach(s=>{
+    const [gan,zhi]=s.replace(/[年月日時]/g,"").split("");
+    if(GAN.includes(gan)) wcount[WUXING_GAN[GAN.indexOf(gan)]]+=0.6;
+    if(ZHI.includes(zhi)) wcount[WUXING_ZHI[ZHI.indexOf(zhi)]]+=0.4;
+  });
+  const wufu={财:wcount.火,事:wcount.木,缘:wcount.金,健:wcount.土,福:wcount.水};
+  const res={y,m,d,gz,wuxing:wcount,wufu,hour,trueDate,offset,city:matched.city,lat:matched.lat,lon:matched.lon,gender};
+
+  showResult(res);
+  buildReport(res,gender);
+  log.textContent+=`🌞 真太阳时偏差: ${(offset*60).toFixed(1)} 分钟\n🕰 真太阳时: ${trueDate.toLocaleString()}\n🪶 八字: ${gz.year} ${gz.month} ${gz.day} ${gz.hour}\n🌿 五行统计: ${JSON.stringify(wcount)}\n💎 五福映射: ${JSON.stringify(wufu)}\n`;
+});
+
+async function showResult(res) {
+  document.getElementById("bazi-value").textContent =
+    `${res.gz.year} ${res.gz.month} ${res.gz.day} ${res.gz.hour}`;
+
+  // 🔹 确保加载等级表
+  if (!window.wuxingLevels) {
+    const resp = await fetch("data/wuxing_levels.json");
+    window.wuxingLevels = await resp.json();
+    console.log("✅ 五行等级表已加载");
+  }
+
+  // 🔹 五行乘以100
+  for (let key in res.wuxing) {
+    res.wuxing[key] = Math.round(res.wuxing[key] * 100);
+  }
+
+  const wuxingColors = {
+    "木": "#2ecc71",
+    "火": "#e67e22",
+    "土": "#d4ac0d",
+    "金": "#bdc3c7",
+    "水": "#3498db"
+  };
+  const nameMap = {
+    "木": "事业运",
+    "火": "财富运",
+    "土": "健康运",
+    "金": "姻缘运",
+    "水": "福气运"
+  };
+
+  function getLevel(value) {
+    const all = Object.values(window.wuxingLevels.levels_by_wuxing).flat();
+    const step = window.wuxingLevels.max_value / all.length;
+    const idx = Math.min(Math.floor(value / step), all.length - 1);
+    return { name: all[idx] };
+  }
+
+  // ✅ 外层 HTML 累加变量
+  let wuxingHTML = `<b>你的基础运势（五行能量与修炼等级轴）：</b><br>`;
+  let totalValue = 0, count = 0;
+
+  for (const [key, value] of Object.entries(res.wuxing)) {
+    const percent = Math.min((value / window.wuxingLevels.max_value) * 100, 100);
+    const color = wuxingColors[key] || "#999";
+    totalValue += value; count++;
+
+    // ⛩️ 五行独立境界（10个双字）
+    const levels = (window.wuxingLevels.levels_by_wuxing &&
+                    window.wuxingLevels.levels_by_wuxing[key]) || [];
+const tickHTML = levels.map((name, i) => {
+  // 等级计算，使用非线性分布（指数型，前期快、后期慢）
+  const pos = Math.pow(i / (levels.length - 1), 3) * 100;
+  const active = Math.abs(percent - pos) < 8;
+  return `<span style="
+    position:absolute;
+    left:${pos}%;
+    top:0;
+    transform:translateX(-50%);
+    font-size:11px;
+    ${active ? `font-weight:700; color:${color};` : `color:#777;`}
+    white-space:nowrap;
+  ">${name}</span>`;
+}).join("");
+    // 🧭 每条五行条
+    wuxingHTML += `
+      <div style="margin:14px 0; padding:8px 10px; background:#fafafa; border-radius:8px; box-shadow:inset 0 0 3px rgba(0,0,0,0.05);">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div><b>${nameMap[key]}</b> (${key})</div>
+          <div style="font-size:13px; color:#666;">${value} 点</div>
+        </div>
+
+        <div style="position:relative; width:100%; height:40px; margin-top:18px;">
+          <!-- 灰色底条 -->
+          <div style="
+            position:absolute; left:0; top:18px;
+            width:100%; height:10px;
+            background:#f0f0f0; border-radius:6px;
+          "></div>
+
+          <!-- 彩条进度 -->
+          <div style="
+            position:absolute; left:0; top:18px;
+            height:10px; width:${percent}%;
+            background:${color}; border-radius:6px;
+            transition:width 0.6s ease-out;
+          "></div>
+
+          <!-- 刻度标签 -->
+          ${tickHTML}
+
+          <!-- 当前值指针 -->
+          <div style="
+            position:absolute;
+            top:18px;
+            left:${percent}%;
+            transform:translate(-50%, -2px);
+            width:4px; height:14px;
+            background:${color};
+            border-radius:2px;
+            box-shadow:0 0 6px ${color};
+          "></div>
+        </div>
+      </div>
+    `;
+  }
+
+  // 🔹 总体修炼层次
+  const avg = totalValue / count;
+  const overallLvl = getLevel(avg);
+  wuxingHTML = `
+    <div style="margin-bottom:8px; font-weight:600; font-size:15px;">
+      🌈 <b>总体修炼层次：</b>${overallLvl.name}
+    </div>
+  ` + wuxingHTML;
+
+  // 输出
+  const wuxingDiv = document.getElementById("wuxing_result");
+  if (wuxingDiv) wuxingDiv.innerHTML = wuxingHTML;
+
+  // 雷达图
+  const labels = ["财富运(火)", "事业运(木)", "姻缘运(金)", "健康运(土)", "福气运(水)"];
+  const values = [res.wufu.财, res.wufu.事, res.wufu.缘, res.wufu.健, res.wufu.福];
+  if (chart) chart.destroy();
+  chart = new Chart(document.getElementById("chart"), {
+    type: "radar",
+    data: {
+      labels,
+      datasets: [{
+        label: "五福分布",
+        data: values,
+        fill: true,
+        borderColor: "#c85c32",
+        backgroundColor: "rgba(200,92,50,0.2)"
+      }]
+    },
+    options: {
+      responsive: false,
+      maintainAspectRatio: false,
+      scales: {
+        r: { min: 0, max: 6, ticks: { stepSize: 1 } }
+      }
+    }
+  });
+}
+
+
+function pickRandom(arr){return arr[Math.floor(Math.random()*arr.length)];}
+
+function buildReport(res, gender){
+  const div=document.getElementById("interpretation");
+  const main=Object.entries(res.wuxing).sort((a,b)=>b[1]-a[1])[0][0];
+  const second=Object.entries(res.wuxing).sort((a,b)=>b[1]-a[1])[1][0];
+  const wuxingLib = libraries["wuxing_traits"][main];
+
+  let traits=[];
+  let level = "平";
+  if (res.wuxing[main] > 1.1) level = "旺";
+  else if (res.wuxing[main] < 0.9) level = "弱";
+
+  if(wuxingLib && wuxingLib[level] && wuxingLib[level][gender]){
+    const pool=wuxingLib[level][gender];
+    traits.push(pickRandom(pool));
+  }
+
+  const careerPool = (
+    libraries["career_advice"][main] &&
+    libraries["career_advice"][main][level] &&
+    libraries["career_advice"][main][level][gender]
+  ) || [];
+
+  let careerText = "";
+  if (careerPool.length > 0) {
+    const first = pickRandom(careerPool);
+    careerText = first;
+  }
+
+  let lifeText="";
+  const lifeLib=libraries["life_stage"][main];
+  if(lifeLib && lifeLib[gender]){
+    const stages=lifeLib[gender];
+    lifeText = stages.join("<br>");
+  }
+
+  const comboKey=main+second;
+  let comboLib=libraries["combo_relations"][comboKey];
+  if(!comboLib){ 
+    const reverseKey=second+main;
+    comboLib=libraries["combo_relations"][reverseKey];
+  }
+  const comboText=comboLib?pickRandom(comboLib):"（此命格五行能量协调，暂无明显相生相克特征）";
+
+  let practiceText = "";
+  if (!window.practiceModulesLoaded) {
+    loadPracticeModules().then(() => {
+      practiceText = generatePracticeReportFromData(res.wuxing);
+      document.getElementById("practice_tips").innerHTML = practiceText;
+    });
+  } else {
+    practiceText = generatePracticeReportFromData(res.wuxing);
+    document.getElementById("practice_tips").innerHTML = practiceText;
+  }
+
+  const levelText = res.wuxing[main]>1.1 ? "旺盛" : res.wuxing[main]<0.9 ? "偏弱" : "平衡";
+  const explainIntro = `你的五行能量图显示，${main}气最强（${parseFloat(res.wuxing[main]).toFixed(2)}），属于${levelText}状态。`;
+
+  const analysisText = `
+    <p>📜 <b>综合命理分析：</b></p>
+    <p>${main}主五行，象征着你的核心能量方向。</p>
+    <p>${explainIntro}</p>
+    <p>${traits.join("<br>")}</p>
+    <p>从命理上看，你的五行结构中，${main}气最显，${second}气相辅，形成“${second}${main}”格局。</p>
+    <p>${comboText}</p>
+    <p>在现实层面，你的事业与环境适合以下方向：</p>
+    <p>${careerText}</p>
+  `;
+  div.innerHTML = `
+    ${analysisText}
+    <hr>
+    <p>🌈 <b>修行提升建议：</b></p>
+    <p id="practice_tips">(正在生成修行建议...)</p>
+    <hr>
+    <p>🕰 <b>大运流年趋势：</b></p>
+    <p>${lifeText}</p>
+  `;
+
+  if (!window.practiceModulesLoaded) {
+    loadPracticeModules().then(() => {
+      const practiceText = generatePracticeReportFromData(res.wuxing);
+      const tipsDiv = document.getElementById("practice_tips");
+      if (tipsDiv) tipsDiv.innerHTML = practiceText;
+    });
+  } else {
+    const practiceText = generatePracticeReportFromData(res.wuxing);
+    const tipsDiv = document.getElementById("practice_tips");
+    if (tipsDiv) tipsDiv.innerHTML = practiceText;
+  }
+
+  async function loadPracticeModules() {
+    const [mRes, iRes] = await Promise.all([
+      fetch("data/practice_modules.json?ver=" + Date.now()),
+      fetch("data/practice_items.json?ver=" + Date.now())
+    ]);
+    const mData = await mRes.json();
+    practiceModules = mData.modules || mData;
+    practiceFinalEndings = mData.finalEndings || [];
+    practiceItems = await iRes.json();
+    window.practiceModulesLoaded = true;
+    console.log("✅ 修行模块已加载");
+  }
+
+  function generatePracticeReportFromData(wuxingData) {
+    if (!practiceModules || !Object.keys(practiceItems).length) 
+      return "修行数据尚未加载";
+
+    let text = "";
+    const usedItems = {};
+
+    for (const wx of ["木","火","土","金","水"]) {
+      const val = wuxingData[wx];
+      const 状态 = val >= 1.1 ? "旺" : val <= 0.9 ? "弱" : "平";
+      const 开 = pick(practiceModules[wx][状态].开头);
+      const 修 = pick(practiceModules[wx][状态].修行);
+      const 行 = pick(practiceModules[wx][状态].行为);
+      const 饰 = pick(practiceModules[wx][状态].饰品);
+
+      const itemList = practiceItems[wx] || [];
+      const itemA = itemList.length ? pick(itemList) : null;
+      const itemB = itemList.length ? pick(itemList) : null;
+
+      let comboActionName = "修行供灯";
+      let itemNameOnly = "供灯";
+
+      if (itemA) {
+        const actA = itemA["动作"] ? itemA["动作"].trim() : "";
+        const nameA = itemA["名称"] ? itemA["名称"].trim() : "";
+        comboActionName = actA && nameA ? actA + nameA : nameA || actA || "修行";
+        usedItems[nameA] = itemA;
+      }
+      if (itemB) {
+        const nameB = itemB["名称"] ? itemB["名称"].trim() : "";
+        itemNameOnly = nameB || "修行";
+        usedItems[nameB] = itemB;
+      }
+
+      text += `<p><b>${getEmoji(wx)} ${getName(wx)}运（${wx}）</b><br>`;
+      text += `${开}${修}${行.replace("{items}", comboActionName)}${饰.replace("{items}", itemNameOnly)}</p>`;
+    }
+
+    text += `<p><b>结论：</b>${pick(practiceFinalEndings)}</p>`;
+    displayUsedItems(usedItems);
+    return text;
+  }
+
+  function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+  function getEmoji(wx){ return {木:"🌿",火:"🔥",土:"🌾",金:"💎",水:"💧"}[wx] || "✨"; }
+  function getName(wx){ return {木:"事业",火:"财富",土:"健康",金:"姻缘",水:"福气"}[wx] || wx; }
+
+  function displayUsedItems(usedItems) {
+    const container = document.getElementById("practice_items_display");
+    if (!container) return;
+    container.innerHTML = "<h4>🪶 本次修行所用道具</h4>";
+
+    const rarityMultiplier = {
+      "普通": 1.0,
+      "珍稀": 1.5,
+      "灵品": 2.0,
+      "仙品": 3.0,
+      "神品": 4.0
+    };
+    const rarityDuration = {
+      "普通": 3,
+      "珍稀": 7,
+      "灵品": 11,
+      "仙品": 15,
+      "神品": 20
+    };
+
+    for (const [name, item] of Object.entries(usedItems)) {
+      const base = item["basePrice"] || 0;
+      const rarity = item["稀有度"] || "普通";
+      const finalPrice = Math.round(base * (rarityMultiplier[rarity] || 1));
+      const boostValue = Math.round(base * 0.1);
+      const duration = rarityDuration[rarity] || 3;
+
+      let html = `<div style="border:1px solid #ddd; border-radius:8px; background:#fff; padding:8px 12px; margin:6px 0; box-shadow:0 0 4px rgba(0,0,0,0.05);">`;
+      html += `<b>${item["名称"] || name}</b><br>`;
+      html += `<small>类型：</small>${item["类型"] || ""}<br>`;
+      html += `<small>动作：</small>${item["动作"] || ""}<br>`;
+      html += `<small>适用五行：</small>${item["适用五行"] || ""}<br>`;
+      html += `<small>稀有度：</small>${rarity}<br>`;
+      html += `<small>基础价格：</small>${base}<br>`;
+      html += `<small>最终价格：</small>${finalPrice}<br>`;
+      html += `<small>加成值：</small>${boostValue}<br>`;
+      html += `<small>能量持续：</small>${duration} 天<br>`;
+      html += `<small>象征意义：</small>${item["象征意义"] || ""}<br>`;
+      html += `<small>说明：</small>${item["说明"] || ""}<br>`;
+      html += `</div>`;
+      container.innerHTML += html;
+    }
+  }
+}
+</script>
+</body>
+</html>

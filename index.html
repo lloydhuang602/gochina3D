@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Go China 3D | A Virtual Journey into Ancient Chinese Culture</title>
+
+  <!-- 🌍 基础 SEO -->
+  <meta name="description" content="Go China 3D offers an immersive 3D journey into the heart of ancient Chinese culture. Explore temples, rituals, and heritage in a virtual world powered by LoongBreath International.">
+  <meta name="keywords" content="Go China 3D, Virtual China Tour, Chinese Culture 3D, LoongBreath, Immersive VR Experience, Ancient Temples, Intangible Heritage, Chinese Tradition, Digital Spiritual Journey, Metaverse China">
+
+  <!-- ✅ 品牌归属 -->
+  <meta name="author" content="LoongBreath International Ltd.">
+  <meta name="copyright" content="© 2025 LoongBreath International Ltd. All rights reserved.">
+
+  <!-- 🌐 语言与区域设置 -->
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.gochina3d.com/">
+
+  <!-- 🌎 多语言 hreflang 标签 -->
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="en" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="zh-Hant" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="ja" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="ko" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="de" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="fr" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="ru" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="es" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="it" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="pt" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="ar" />
+  <link rel="alternate" href="https://www.gochina3d.com/" hreflang="x-default" />
+
+  <!-- 📱 Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Go China 3D | A Virtual Journey into Ancient Chinese Culture">
+  <meta property="og:description" content="Explore ancient temples, rituals, and heritage in a stunning 3D metaverse powered by LoongBreath International.">
+  <meta property="og:url" content="https://www.gochina3d.com/">
+  <meta property="og:image" content="https://www.gochina3d.com/images/share.jpg">
+  <meta property="og:site_name" content="Go China 3D">
+
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Go China 3D | A Virtual Journey into Ancient Chinese Culture">
+  <meta name="twitter:description" content="A metaverse experience blending culture, art, and technology. Explore China's ancient heart in 3D.">
+  <meta name="twitter:image" content="https://www.gochina3d.com/images/share.jpg">
+
+  <!-- 🧭 JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Go China 3D",
+    "url": "https://www.gochina3d.com/",
+    "alternateName": "GoChina3D Cultural Metaverse",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LoongBreath International Ltd.",
+      "url": "https://www.loongbreath.com/",
+      "logo": "https://www.gochina3d.com/images/GoChinaLogo.png"
+    },
+    "description": "An immersive 3D metaverse journey into Chinese culture — temples, rituals, heritage and art — powered by LoongBreath International.",
+    "inLanguage": ["en","zh-Hant","ja","ko","de","fr","ru","es","it","pt","ar"],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.gochina3d.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Noto+Serif+SC&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 704px;
+      background: url("images/bgImageA-Buddha.jpg") no-repeat center center;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      pointer-events: none;
+    }
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 2;
+  margin-top: 5px; /* 让logo与语言栏略微分开 */
+}
+
+
+    .title img {
+      max-height: 80px;
+      width: auto;
+    }
+
+    /* 语言按钮样式 */
+    .lang-select {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .lang-btn {
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      font-size: 14px;
+      padding: 5px 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn:hover {
+      background: #2c2c2c;
+      transform: scale(1.05);
+    }
+
+    .subtitle {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5em;
+      text-align: center;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      z-index: 1;
+    }
+
+    .subtitle-cn {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Noto Serif SC', serif;
+      font-size: 2em;
+      text-align: center;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      z-index: 1;
+    }
+
+    .enter-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .enter-button {
+      display: inline-block;
+      padding: 14px 40px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(90deg, #e63946, #ffba08);
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 0 15px rgba(255,186,8,0.5);
+    }
+
+    .enter-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,186,8,0.8);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 70px;
+      padding: 40px;
+      width: 70%;
+      margin: 0 auto 60px;
+    }
+
+    .grid-item {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .grid-item:hover { transform: scale(1.05); }
+
+    .grid-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      flex-grow: 1;
+    }
+
+    .grid-item h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2em;
+    }
+
+    .grid-item p {
+      margin: 0 0 15px;
+      font-size: 0.9em;
+      color: #bbb;
+    }
+
+    footer {
+      border-top: 1px solid #555;
+      font-size: 0.9em;
+      color: #aaa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #000;
+    }
+
+/* 固定语言栏和Logo区域 */
+.hero {
+  position: relative;
+}
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: transparent;
+  padding: 6px 0 12px;
+  backdrop-filter: blur(1px);
+  display: flex;
+  flex-direction: column; /* 关键：上下排列 */
+  align-items: center;    /* 水平居中 */
+  gap: 6px;               /* 两行间距 */
+}
+
+
+/* 让后面内容不会被遮住 */
+body {
+  padding-top: 0px; /* 让页面内容往下错开一点 */
+}
+
+  </style>
+  
+ <script src="https://cdn.counter.dev/script.js" data-id="3f67edbc-5578-4662-b983-38498e33c9c4" data-utcoffset="8"></script> 
+ 
+</head>
+<body>
+<!-- 固定顶部区域 -->
+<div class="header-fixed">
+  <div class="lang-select" id="langButtons"></div>
+  <div class="title">
+    <img src="images/GoChinaLogo.png" alt="Go China 3D">
+  </div>
+</div>
+
+
+<!-- 原 hero 保持不变 -->
+<div class="hero">
+  <div class="subtitle" data-i18n="subtitle"></div>
+  <div class="subtitle-cn" data-i18n="subtitle_cn"></div>
+</div>
+
+
+  <div class="enter-section">
+    <a href="https://webapps.ciyankeji.com/temple/" class="enter-button" data-i18n="enter"></a>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+<footer>
+  <div data-i18n="copyright"></div>
+  <div>
+    <span data-i18n="powered"></span>
+    <a href="https://www.loongbreath.com" target="_blank" rel="noopener noreferrer" style="color:#ccc; text-decoration:none; margin-left:4px;">
+      LoongBreath
+    </a>
+  </div>
+</footer>
+
+
+  <script>
+    let translations = {};
+    let currentLang = localStorage.getItem("lang") || "en";
+
+    async function loadLang() {
+      const res = await fetch("lang.json");
+      translations = await res.json();
+      applyLang(currentLang);
+      buildLangButtons();
+    }
+
+    function applyLang(lang) {
+      const data = translations[lang];
+      if (!data) return;
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (data[key]) el.textContent = data[key];
+      });
+
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+      data.grid.forEach((item, i) => {
+        grid.innerHTML += `
+          <div class="grid-item">
+            <img src="images/demo${i+1}.jpg" alt="">
+            <h3>${item[0]}</h3>
+            <p>${item[1]}</p>
+          </div>`;
+      });
+    }
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem("lang", lang);
+      applyLang(lang);
+    }
+
+    function buildLangButtons() {
+      const container = document.getElementById("langButtons");
+      container.innerHTML = "";
+      const langs = Object.keys(translations);
+      langs.forEach(l => {
+        const btn = document.createElement("button");
+        btn.className = "lang-btn";
+        btn.textContent = translations[l].name;
+        btn.onclick = () => setLang(l);
+        container.appendChild(btn);
+      });
+    }
+
+    loadLang();
+  </script>
+</body>
+</html>

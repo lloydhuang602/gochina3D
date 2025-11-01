@@ -1,0 +1,211 @@
+{
+  "en": {
+    "name": "English",
+    "subtitle": "3D Journey into the Ancient Heart of China",
+    "subtitle_cn": "",
+    "enter": "Enter 3D Journey",
+	"copyright": "© 2025 LoongBreath International Ltd. - All Rights Reserved.", 
+	"powered": "A cultural metaverse project by LoongBreath",
+    "grid": [
+      ["Explore Ancient Temples", "Immersive tours through ancient temples"],
+      ["Create Your Digital Self", "Transform into a digital avatar for virtual cultivation"],
+      ["Rituals & Marketplace", "Pray, make wishes, and explore the virtual market"],
+      ["AI Masters & Wisdom", "Consult AI masters for divination and insight"],
+      ["Intangible Heritage", "Experience the beauty of intangible culture"],
+      ["Learn Chinese", "Learn Mandarin and discover its wisdom"],
+      ["Taste Imperial Cuisine", "Savor royal delicacies"],
+      ["Experience Ancient Music", "Immerse in ancient melodies"],
+      ["Discover Ancient Craftsmanship", "Explore exquisite traditional crafts"]
+    ]
+  },
+  "zh-Hant": {
+    "name": "中國語",
+    "subtitle": "3D之旅，走進古老的中國心臟",
+    "subtitle_cn": "",
+    "enter": "開啟 3D 之旅",
+	"copyright": "版權所有 © 2025 龍氣國際有限公司", 
+	"powered": "龍氣國際 文化元宇宙項目",
+    "grid": [
+      ["探索古寺", "沉浸式遊覽千年古剎"],
+      ["創建數位分身", "化身虛擬替身，互動修行"],
+      ["祈福與市集", "祈願、許願、虛擬商城"],
+      ["AI智者與智慧", "AI大師，解籤測字"],
+      ["非遺文化", "感受非物質文化遺產之美"],
+      ["學習中文", "學漢語，感知智慧"],
+      ["品味宮廷美食", "體驗皇室佳餚"],
+      ["體驗古代音樂", "沉浸古樂韻律"],
+      ["探索古代工藝", "探尋精湛工藝之美"]
+    ]
+  },
+  "ja": {
+    "name": "日本語",
+    "subtitle": "古代中国の心への3D旅",
+    "subtitle_cn": "",
+    "enter": "3Dの旅へ入る",
+	"copyright": "著作権 © 2025 LoongBreath International Ltd.", 
+	"powered": "LoongBreath による文化メタバースプロジェクト",
+    "grid": [
+      ["古代寺院を探索", "千年の古寺を没入体験"],
+      ["デジタル分身を作成", "デジタルアバターとして修行"],
+      ["祈願とマーケット", "祈り、願い、バーチャル市場を探索"],
+      ["AI師匠と智慧", "AIで占いや洞察を得る"],
+      ["無形文化遺産", "無形文化の美を体験"],
+      ["中国語を学ぶ", "中国語を学び、知恵を感じる"],
+      ["宮廷料理を味わう", "王朝の美食を堪能"],
+      ["古代音楽を体験", "古の旋律に浸る"],
+      ["伝統工芸を発見", "精巧な職人技を探る"]
+    ]
+  },
+  "ko": {
+    "name": "한국어",
+    "subtitle": "중국 고대의 심장으로 떠나는 3D 여행",
+    "subtitle_cn": "",
+    "enter": "3D 여행 시작",
+	"copyright": "저작권 © 2025 LoongBreath International Ltd.",
+	"powered": "LoongBreath의 문화 메타버스 프로젝트",
+    "grid": [
+      ["고대 사찰 탐험", "천년 사찰을 몰입 탐방"],
+      ["디지털 자아 만들기", "디지털 아바타로 수행"],
+      ["의식과 마켓플레이스", "기도하고 소원을 빌며 가상 시장 탐험"],
+      ["AI 스승과 지혜", "AI 마스터의 점괘와 통찰"],
+      ["무형 문화유산", "무형 문화의 아름다움 경험"],
+      ["중국어 배우기", "중국어를 배우고 지혜를 느끼기"],
+      ["황실 요리 맛보기", "왕실의 미식을 체험"],
+      ["고대 음악 체험", "고대 선율에 몰입"],
+      ["고대 공예 발견", "전통 공예의 정수를 탐험"]
+    ]
+  },
+  "de": {
+    "name": "Deutsch",
+    "subtitle": "3D-Reise ins alte Herz Chinas",
+    "subtitle_cn": "",
+    "enter": "3D-Reise starten",
+	"copyright": "© 2025 LoongBreath International Ltd. - Alle Rechte vorbehalten.", 
+	"powered": "Ein kulturelles Metaverse-Projekt von LoongBreath",
+    "grid": [
+      ["Alte Tempel erkunden", "Eintauchen in jahrtausendealte Tempel"],
+      ["Dein digitales Selbst erschaffen", "Werde ein digitaler Avatar zur spirituellen Reise"],
+      ["Rituale & Marktplatz", "Beten, Wünsche äußern und den virtuellen Markt erkunden"],
+      ["KI-Meister & Weisheit", "Konsultiere KI-Meister für Einsicht und Weissagung"],
+      ["Immaterielles Kulturerbe", "Erlebe die Schönheit des kulturellen Erbes"],
+      ["Chinesisch lernen", "Lerne Mandarin und entdecke seine Weisheit"],
+      ["Kaiserliche Küche kosten", "Genieße königliche Delikatessen"],
+      ["Alte Musik erleben", "Tauche in antike Melodien ein"],
+      ["Traditionelles Handwerk entdecken", "Erforsche kunstvolle Handwerkskunst"]
+    ]
+  },
+  "fr": {
+    "name": "Français",
+    "subtitle": "Voyage 3D au cœur ancien de la Chine",
+    "subtitle_cn": "",
+    "enter": "Entrer dans le voyage 3D",
+	"copyright": "© 2025 LoongBreath International Ltd. - Tous droits réservés.", 
+	"powered": "Un projet de métavers culturel de LoongBreath",
+    "grid": [
+      ["Explorer les temples anciens", "Visites immersives des temples millénaires"],
+      ["Créer votre double numérique", "Devenez un avatar numérique pour la méditation virtuelle"],
+      ["Rituels et marché", "Priez, faites des vœux et explorez le marché virtuel"],
+      ["Maîtres IA et sagesse", "Consultez les maîtres IA pour des conseils et révélations"],
+      ["Patrimoine immatériel", "Découvrez la beauté du patrimoine culturel immatériel"],
+      ["Apprendre le chinois", "Apprenez le mandarin et sa sagesse millénaire"],
+      ["Goûter la cuisine impériale", "Savourez les délices royaux"],
+      ["Vivre la musique ancienne", "Imprégnez-vous des mélodies ancestrales"],
+      ["Découvrir l’artisanat ancien", "Explorez les savoir-faire traditionnels"]
+    ]
+  },
+  "ru": {
+    "name": "Русский",
+    "subtitle": "3D-путешествие в древнее сердце Китая",
+    "subtitle_cn": "",
+    "enter": "Начать 3D-путешествие",
+	"copyright": "© 2025 LoongBreath International Ltd. - Все права защищены.",
+	"powered": "Культурный метавселенный проект от LoongBreath",
+    "grid": [
+      ["Исследовать древние храмы", "Погрузитесь в атмосферу тысячелетних храмов"],
+      ["Создать цифровое Я", "Станьте цифровым аватаром для духовного пути"],
+      ["Обряды и рынок", "Молитесь, загадывайте желания и исследуйте виртуальный рынок"],
+      ["ИИ-мастера и мудрость", "Обратитесь к ИИ-мастерам за прорицанием и советом"],
+      ["Нематериальное наследие", "Познайте красоту нематериальной культуры"],
+      ["Изучать китайский язык", "Учите мандарин и открывайте древнюю мудрость"],
+      ["Попробовать императорскую кухню", "Насладитесь царскими деликатесами"],
+      ["Ощутить древнюю музыку", "Погрузитесь в звуки древности"],
+      ["Открыть древние ремёсла", "Исследуйте изысканное традиционное мастерство"]
+    ]
+  },
+  "es": {
+    "name": "Español",
+    "subtitle": "Viaje 3D al corazón antiguo de China",
+    "subtitle_cn": "",
+    "enter": "Iniciar viaje 3D",
+	"copyright": "© 2025 LoongBreath International Ltd. - Todos los derechos reservados.", 
+	"powered": "Un proyecto de metaverso cultural de LoongBreath",
+    "grid": [
+      ["Explorar templos antiguos", "Recorridos inmersivos por templos milenarios"],
+      ["Crear tu yo digital", "Conviértete en un avatar digital para la práctica virtual"],
+      ["Rituales y mercado", "Reza, pide deseos y explora el mercado virtual"],
+      ["Maestros de IA y sabiduría", "Consulta a los maestros de IA para obtener orientación"],
+      ["Patrimonio inmaterial", "Experimenta la belleza del patrimonio cultural inmaterial"],
+      ["Aprender chino", "Aprende mandarín y descubre su sabiduría"],
+      ["Probar la cocina imperial", "Disfruta de los manjares reales"],
+      ["Experimentar la música antigua", "Sumérgete en melodías ancestrales"],
+      ["Descubrir la artesanía antigua", "Explora los oficios tradicionales"]
+    ]
+  },
+  "it": {
+    "name": "Italiano",
+    "subtitle": "Viaggio 3D nel cuore antico della Cina",
+    "subtitle_cn": "",
+    "enter": "Inizia il viaggio 3D",
+	"copyright": "© 2025 LoongBreath International Ltd. - Tutti i diritti riservati.", 
+	"powered": "Un progetto di metaverso culturale di LoongBreath",
+    "grid": [
+      ["Esplora i templi antichi", "Tour immersivi tra templi millenari"],
+      ["Crea il tuo sé digitale", "Diventa un avatar digitale per la pratica spirituale"],
+      ["Rituali e mercato", "Prega, esprimi desideri ed esplora il mercato virtuale"],
+      ["Maestri IA e saggezza", "Consulta i maestri IA per intuizioni e consigli"],
+      ["Patrimonio immateriale", "Scopri la bellezza del patrimonio culturale immateriale"],
+      ["Imparare il cinese", "Impara il mandarino e scopri la sua saggezza"],
+      ["Assaporare la cucina imperiale", "Gusta le prelibatezze reali"],
+      ["Vivere la musica antica", "Immergiti nelle melodie ancestrali"],
+      ["Scoprire l’artigianato antico", "Esplora l’arte tradizionale raffinata"]
+    ]
+  },
+  "ar": {
+    "name": "العربية",
+    "subtitle": "رحلة ثلاثية الأبعاد إلى قلب الصين القديم",
+    "subtitle_cn": "",
+    "enter": "ابدأ الرحلة ثلاثية الأبعاد",
+	"copyright": "© 2025 شركة لونغ بريس الدولية المحدودة - جميع الحقوق محفوظة.", 
+	"powered": "مشروع ميتافيرس ثقافي من لونغ بريس",
+    "grid": [
+      ["استكشاف المعابد القديمة", "جولات غامرة عبر المعابد التاريخية"],
+      ["أنشئ ذاتك الرقمية", "تحول إلى صورة رقمية لممارسة روحية"],
+      ["الطقوس والسوق", "صلّ، وتمنى، واستكشف السوق الافتراضي"],
+      ["أساتذة الذكاء الاصطناعي والحكمة", "استشر أساتذة الذكاء الاصطناعي للحصول على الإلهام والمعرفة"],
+      ["التراث غير المادي", "اختبر جمال التراث الثقافي غير المادي"],
+      ["تعلم الصينية", "تعلم الماندرين واكتشف حكمتها"],
+      ["تذوق المأكولات الإمبراطورية", "استمتع بالمأكولات الملكية"],
+      ["اختبر الموسيقى القديمة", "انغمس في الألحان القديمة"],
+      ["اكتشف الحرف القديمة", "استكشف فنون الحرف التقليدية"]
+    ]
+  },
+  "pt": {
+    "name": "Português",
+    "subtitle": "Jornada 3D ao coração antigo da China",
+    "subtitle_cn": "",
+    "enter": "Iniciar jornada 3D",
+	"copyright": "© 2025 LoongBreath International Ltd. - Todos os direitos reservados.", 
+	"powered": "Um projeto de metaverso cultural da LoongBreath",
+    "grid": [
+      ["Explorar templos antigos", "Passeios imersivos por templos milenares"],
+      ["Criar seu eu digital", "Transforme-se em um avatar digital para a prática espiritual"],
+      ["Rituais e mercado", "Ore, faça desejos e explore o mercado virtual"],
+      ["Mestres de IA e sabedoria", "Consulte mestres de IA para orientação e visão"],
+      ["Patrimônio imaterial", "Experimente a beleza do patrimônio cultural imaterial"],
+      ["Aprender chinês", "Aprenda mandarim e descubra sua sabedoria"],
+      ["Provar a culinária imperial", "Saboreie as iguarias reais"],
+      ["Vivenciar a música antiga", "Mergulhe em melodias ancestrais"],
+      ["Descobrir o artesanato antigo", "Explore o trabalho artesanal tradicional"]
+    ]
+  }
+}
