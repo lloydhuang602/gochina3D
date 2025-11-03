@@ -6,17 +6,18 @@
     "enter": "Enter 3D Journey",
 	"copyright": "© 2025 LoongBreath International Ltd. - All Rights Reserved.", 
 	"powered": "A cultural metaverse project by LoongBreath",
-    "grid": [
-      ["Explore Ancient Temples", "Immersive tours through ancient temples"],
-      ["Create Your Digital Self", "Transform into a digital avatar for virtual cultivation"],
-      ["Rituals & Marketplace", "Pray, make wishes, and explore the virtual market"],
-      ["AI Masters & Wisdom", "Consult AI masters for divination and insight"],
-      ["Intangible Heritage", "Experience the beauty of intangible culture"],
-      ["Learn Chinese", "Learn Mandarin and discover its wisdom"],
-      ["Taste Imperial Cuisine", "Savor royal delicacies"],
-      ["Experience Ancient Music", "Immerse in ancient melodies"],
-      ["Discover Ancient Craftsmanship", "Explore exquisite traditional crafts"]
-    ]
+	"grid": [
+	  ["Ancient Temples, A Journey of Awakening", "Step into virtual temples and feel the wisdom and serenity of millennia."],
+	  ["Nature as the Way, Wisdom Awakens in the East", "Explore the fusion of Taoist balance and Buddhist insight through your digital self."],
+	  ["Light a Wish, Inherit the Intangible", "Leave your blessings in virtual fairs where traditions and crafts live on."],
+	  ["Origin of Characters, Forms of Art", "Trace the birth of Chinese writing and sense the rhythm of Eastern aesthetics."],
+	  ["Herbal Path, Source of Healing", "Rediscover harmony between nature and life through digital medicine and philosophy."],
+	  ["Kung Fu of China, Harmony in Motion", "Enter the path of martial arts and feel the balance of strength and spirit."],
+	  ["Ancient Melodies, Resonance of Heaven and Earth", "Hear timeless sounds echo through the void, where all things vibrate as one."],
+	  ["Chinese Cuisine, Courtesy to the World", "Savor the elegance and warmth of Eastern life within a virtual banquet."],
+	  ["Crafts of a Great Nation, Aesthetic of the East", "Step into the world of craftsmanship and witness the eternal beauty of Chinese creation."]
+	]
+
   },
   "zh-Hant": {
     "name": "中國語",
@@ -25,17 +26,17 @@
     "enter": "開啟 3D 之旅",
 	"copyright": "版權所有 © 2025 龍氣國際有限公司", 
 	"powered": "龍氣國際 文化元宇宙項目",
-    "grid": [
-      ["探索古寺", "沉浸式遊覽千年古剎"],
-      ["創建數位分身", "化身虛擬替身，互動修行"],
-      ["祈福與市集", "祈願、許願、虛擬商城"],
-      ["AI智者與智慧", "AI大師，解籤測字"],
-      ["非遺文化", "感受非物質文化遺產之美"],
-      ["學習中文", "學漢語，感知智慧"],
-      ["品味宮廷美食", "體驗皇室佳餚"],
-      ["體驗古代音樂", "沉浸古樂韻律"],
-      ["探索古代工藝", "探尋精湛工藝之美"]
-    ]
+	"grid": [
+		["千年古剎，覺悟之旅", "鐘聲悠遠，煙火氤氳，步入虛擬古寺的靈光之境。隨心而行，於無聲之間感悟千年的智慧與寧靜。"],
+		["道法自然，慧覺東方", "天地為經，心念為緯。以虛擬之身，探悟佛道哲理與命理天心。"],
+		["點亮心願，傳承非遺", "香火、祈願與手作的溫度，在虛擬廟會中延續。讓祝福化作光，見證文化的流動與永恆。"],
+		["漢字之源，藝術之形", "追溯文字的誕生，觸摸文明的脈搏。一筆一劃之間，皆是東方思維的圖騰。"],
+		["草本為道，療癒之源", "山川蘊藥意，草木寄天心。在數位藥堂中，重遇人與自然的共生之理。"],
+		["中國功夫，動靜合一", "拳意如風，呼吸如流。以身入道，感悟力與心的平衡。"],
+		["古樂流韻，天地共鳴", "絲竹起處，萬象隨聲。讓虛空回蕩古韻，在節奏中聆聽宇宙的心跳。"],
+		["中國美食，禮遇天下", "一味一禮，皆承載著人情與時光。於虛擬宴席間，品味東方生活的優雅與溫度。"],
+		["大國匠心，東方美學", "火與金對話，形與魂共生。走進工藝的世界，見證中國創造的永恆之美。"]
+	  ]
   },
   "ja": {
     "name": "日本語",
@@ -44,17 +45,18 @@
     "enter": "3Dの旅へ入る",
 	"copyright": "著作権 © 2025 LoongBreath International Ltd.", 
 	"powered": "LoongBreath による文化メタバースプロジェクト",
-    "grid": [
-      ["古代寺院を探索", "千年の古寺を没入体験"],
-      ["デジタル分身を作成", "デジタルアバターとして修行"],
-      ["祈願とマーケット", "祈り、願い、バーチャル市場を探索"],
-      ["AI師匠と智慧", "AIで占いや洞察を得る"],
-      ["無形文化遺産", "無形文化の美を体験"],
-      ["中国語を学ぶ", "中国語を学び、知恵を感じる"],
-      ["宮廷料理を味わう", "王朝の美食を堪能"],
-      ["古代音楽を体験", "古の旋律に浸る"],
-      ["伝統工芸を発見", "精巧な職人技を探る"]
-    ]
+	"grid": [
+	  ["千年の古刹、悟りの旅へ", "バーチャル寺院を巡り、千年の智慧と静寂を感じる。"],
+	  ["道は自然にして、慧は東方に覚る", "デジタルの身を通じて、道教と仏教の哲理を探求する。"],
+	  ["願いを灯し、無形の伝統を継ぐ", "バーチャル庙会と工房で、文化の祈りと手仕事を体験する。"],
+	  ["文字の起源、芸術の形", "漢字の誕生を辿り、東洋美学のリズムを感じる。"],
+	  ["草木の道、癒しの源", "自然と生命の調和を再発見し、古の療法を学ぶ。"],
+	  ["中国功夫、動と静の調和", "武術の道に入り、力と心の均衡を体感する。"],
+	  ["古の調べ、天地の共鳴", "悠久の音が虚空に響き、万象が一体となる。"],
+	  ["中国美食、礼でもてなす", "バーチャル宴席で、東方の優雅と温もりを味わう。"],
+	  ["匠の心、東方の美学", "工芸の世界に入り、中国創造の永遠の美を見届ける。"]
+	]
+
   },
   "ko": {
     "name": "한국어",
@@ -63,17 +65,18 @@
     "enter": "3D 여행 시작",
 	"copyright": "저작권 © 2025 LoongBreath International Ltd.",
 	"powered": "LoongBreath의 문화 메타버스 프로젝트",
-    "grid": [
-      ["고대 사찰 탐험", "천년 사찰을 몰입 탐방"],
-      ["디지털 자아 만들기", "디지털 아바타로 수행"],
-      ["의식과 마켓플레이스", "기도하고 소원을 빌며 가상 시장 탐험"],
-      ["AI 스승과 지혜", "AI 마스터의 점괘와 통찰"],
-      ["무형 문화유산", "무형 문화의 아름다움 경험"],
-      ["중국어 배우기", "중국어를 배우고 지혜를 느끼기"],
-      ["황실 요리 맛보기", "왕실의 미식을 체험"],
-      ["고대 음악 체험", "고대 선율에 몰입"],
-      ["고대 공예 발견", "전통 공예의 정수를 탐험"]
-    ]
+	"grid": [
+	  ["천년 고찰, 깨달음의 여정", "가상 사찰을 거닐며 천년의 지혜와 고요를 느낍니다."],
+	  ["도는 자연을 따르고, 지혜는 동방에서 깨어나다", "디지털 존재로서 도가와 불교의 철학을 탐구합니다."],
+	  ["소원을 밝히고, 무형의 전통을 잇다", "가상 시장과 공방에서 문화의 기원과 염원을 체험합니다."],
+	  ["문자의 근원, 예술의 형상", "한자의 기원을 따라가며 동양 미학의 흐름을 느낍니다."],
+	  ["초목의 도, 치유의 근원", "자연과 생명의 조화를 다시 만나 고대의 치유 지혜를 배웁니다."],
+	  ["중국 쿵푸, 동정의 조화", "무술의 길에 들어서서 힘과 마음의 균형을 체험합니다."],
+	  ["고악의 선율, 천지의 공명", "시간을 넘어 울려 퍼지는 소리, 만물이 함께 울립니다."],
+	  ["중국 미식, 예로써 맞이하다", "가상 연회 속에서 동양의 우아함과 따뜻함을 맛봅니다."],
+	  ["장인의 정신, 동방의 미학", "공예의 세계로 들어가 중국 창조의 영원한 아름다움을 목격합니다."]
+	]
+
   },
   "de": {
     "name": "Deutsch",
@@ -82,17 +85,18 @@
     "enter": "3D-Reise starten",
 	"copyright": "© 2025 LoongBreath International Ltd. - Alle Rechte vorbehalten.", 
 	"powered": "Ein kulturelles Metaverse-Projekt von LoongBreath",
-    "grid": [
-      ["Alte Tempel erkunden", "Eintauchen in jahrtausendealte Tempel"],
-      ["Dein digitales Selbst erschaffen", "Werde ein digitaler Avatar zur spirituellen Reise"],
-      ["Rituale & Marktplatz", "Beten, Wünsche äußern und den virtuellen Markt erkunden"],
-      ["KI-Meister & Weisheit", "Konsultiere KI-Meister für Einsicht und Weissagung"],
-      ["Immaterielles Kulturerbe", "Erlebe die Schönheit des kulturellen Erbes"],
-      ["Chinesisch lernen", "Lerne Mandarin und entdecke seine Weisheit"],
-      ["Kaiserliche Küche kosten", "Genieße königliche Delikatessen"],
-      ["Alte Musik erleben", "Tauche in antike Melodien ein"],
-      ["Traditionelles Handwerk entdecken", "Erforsche kunstvolle Handwerkskunst"]
-    ]
+	"grid": [
+	  ["Tausendjährige Tempel, Reise der Erleuchtung", "Erkunde virtuelle Tempel und spüre die Weisheit und Stille vergangener Jahrtausende."],
+	  ["Der Weg der Natur, Erwachende Weisheit des Ostens", "Erlebe die Philosophie von Dao und Buddha durch dein digitales Selbst."],
+	  ["Ein Wunsch im Licht, Erbe des Immateriellen", "Hinterlasse deine Segenswünsche in virtuellen Märkten, wo Traditionen weiterleben."],
+	  ["Ursprung der Schrift, Form der Kunst", "Verfolge die Geburt der chinesischen Schriftzeichen und fühle den Rhythmus östlicher Ästhetik."],
+	  ["Pflanzen als Weg, Quelle der Heilung", "Entdecke die Harmonie von Natur und Leben durch digitale Heilkunst und Philosophie neu."],
+	  ["Chinesisches Kung Fu, Einheit von Bewegung und Ruhe", "Tauche in die Welt der Kampfkünste ein und spüre das Gleichgewicht von Kraft und Geist."],
+	  ["Klang der Antike, Resonanz von Himmel und Erde", "Höre zeitlose Melodien, die durch den Raum hallen, und fühle, wie alles im Einklang schwingt."],
+	  ["Chinesische Küche, Höflichkeit für die Welt", "Genieße im virtuellen Bankett die Eleganz und Wärme des östlichen Lebensgefühls."],
+	  ["Meisterhafte Handwerkskunst, Ästhetik des Ostens", "Betritt die Welt des Kunsthandwerks und erlebe die ewige Schönheit chinesischer Schöpfung."]
+	]
+
   },
   "fr": {
     "name": "Français",
@@ -101,17 +105,18 @@
     "enter": "Entrer dans le voyage 3D",
 	"copyright": "© 2025 LoongBreath International Ltd. - Tous droits réservés.", 
 	"powered": "Un projet de métavers culturel de LoongBreath",
-    "grid": [
-      ["Explorer les temples anciens", "Visites immersives des temples millénaires"],
-      ["Créer votre double numérique", "Devenez un avatar numérique pour la méditation virtuelle"],
-      ["Rituels et marché", "Priez, faites des vœux et explorez le marché virtuel"],
-      ["Maîtres IA et sagesse", "Consultez les maîtres IA pour des conseils et révélations"],
-      ["Patrimoine immatériel", "Découvrez la beauté du patrimoine culturel immatériel"],
-      ["Apprendre le chinois", "Apprenez le mandarin et sa sagesse millénaire"],
-      ["Goûter la cuisine impériale", "Savourez les délices royaux"],
-      ["Vivre la musique ancienne", "Imprégnez-vous des mélodies ancestrales"],
-      ["Découvrir l’artisanat ancien", "Explorez les savoir-faire traditionnels"]
-    ]
+	"grid": [
+	  ["Temples millénaires, voyage de l’éveil", "Parcourez des temples virtuels et ressentez la sagesse et la sérénité des millénaires passés."],
+	  ["La voie de la nature, sagesse éveillée d’Orient", "Découvrez la philosophie du taoïsme et du bouddhisme à travers votre être numérique."],
+	  ["Allumez un vœu, héritez de l’intangible", "Laissez vos bénédictions dans des foires virtuelles où traditions et artisanats se perpétuent."],
+	  ["Origine des caractères, formes de l’art", "Remontez aux sources de l’écriture chinoise et percevez le rythme de l’esthétique orientale."],
+	  ["Herbes et voie, source de guérison", "Retrouvez l’harmonie entre nature et vie à travers la médecine et la philosophie anciennes."],
+	  ["Kung-fu chinois, harmonie du mouvement et du calme", "Entrez dans la voie des arts martiaux et ressentez l’équilibre entre force et esprit."],
+	  ["Mélodies anciennes, résonance du ciel et de la terre", "Écoutez les sons intemporels résonner dans le vide, où tout vibre à l’unisson."],
+	  ["Cuisine chinoise, courtoisie envers le monde", "Savourez l’élégance et la chaleur de la vie orientale lors d’un banquet virtuel."],
+	  ["Savoir-faire impérial, esthétique de l’Orient", "Pénétrez dans l’univers de l’artisanat et contemplez la beauté éternelle de la création chinoise."]
+	]
+
   },
   "ru": {
     "name": "Русский",
@@ -120,17 +125,18 @@
     "enter": "Начать 3D-путешествие",
 	"copyright": "© 2025 LoongBreath International Ltd. - Все права защищены.",
 	"powered": "Культурный метавселенный проект от LoongBreath",
-    "grid": [
-      ["Исследовать древние храмы", "Погрузитесь в атмосферу тысячелетних храмов"],
-      ["Создать цифровое Я", "Станьте цифровым аватаром для духовного пути"],
-      ["Обряды и рынок", "Молитесь, загадывайте желания и исследуйте виртуальный рынок"],
-      ["ИИ-мастера и мудрость", "Обратитесь к ИИ-мастерам за прорицанием и советом"],
-      ["Нематериальное наследие", "Познайте красоту нематериальной культуры"],
-      ["Изучать китайский язык", "Учите мандарин и открывайте древнюю мудрость"],
-      ["Попробовать императорскую кухню", "Насладитесь царскими деликатесами"],
-      ["Ощутить древнюю музыку", "Погрузитесь в звуки древности"],
-      ["Открыть древние ремёсла", "Исследуйте изысканное традиционное мастерство"]
-    ]
+	"grid": [
+	  ["Древние храмы, путь пробуждения", "Погрузитесь в виртуальные святыни и ощутите мудрость и покой тысячелетий."],
+	  ["Путь природы, пробуждённая мудрость Востока", "Исследуйте философию Дао и Будды через своё цифровое воплощение."],
+	  ["Зажги желание, сохрани нематериальное наследие", "Оставьте свои благословения на виртуальных ярмарках, где живут традиции."],
+	  ["Истоки письменности, формы искусства", "Проследите рождение китайских иероглифов и почувствуйте ритм восточной эстетики."],
+	  ["Травы как путь, источник исцеления", "Откройте заново гармонию природы и жизни через древние знания медицины."],
+	  ["Китайское кунг-фу, единство движения и покоя", "Прикоснитесь к миру боевых искусств и ощутите баланс силы и духа."],
+	  ["Звуки древности, резонанс неба и земли", "Слушайте вечные мелодии, где всё сущее вибрирует в едином ритме."],
+	  ["Китайская кухня, гостеприимство миру", "Насладитесь изяществом и теплом восточной жизни в виртуальном пире."],
+	  ["Мастерство великой нации, эстетика Востока", "Войдите в мир ремёсел и узрите вечную красоту китайского творчества."]
+	]
+
   },
   "es": {
     "name": "Español",
@@ -139,17 +145,18 @@
     "enter": "Iniciar viaje 3D",
 	"copyright": "© 2025 LoongBreath International Ltd. - Todos los derechos reservados.", 
 	"powered": "Un proyecto de metaverso cultural de LoongBreath",
-    "grid": [
-      ["Explorar templos antiguos", "Recorridos inmersivos por templos milenarios"],
-      ["Crear tu yo digital", "Conviértete en un avatar digital para la práctica virtual"],
-      ["Rituales y mercado", "Reza, pide deseos y explora el mercado virtual"],
-      ["Maestros de IA y sabiduría", "Consulta a los maestros de IA para obtener orientación"],
-      ["Patrimonio inmaterial", "Experimenta la belleza del patrimonio cultural inmaterial"],
-      ["Aprender chino", "Aprende mandarín y descubre su sabiduría"],
-      ["Probar la cocina imperial", "Disfruta de los manjares reales"],
-      ["Experimentar la música antigua", "Sumérgete en melodías ancestrales"],
-      ["Descubrir la artesanía antigua", "Explora los oficios tradicionales"]
-    ]
+	"grid": [
+	  ["Templos milenarios, viaje del despertar", "Adéntrate en templos virtuales y siente la sabiduría y la calma de mil años."],
+	  ["El camino natural, sabiduría que despierta en Oriente", "Explora la filosofía del Tao y del Budismo a través de tu ser digital."],
+	  ["Enciende un deseo, hereda lo intangible", "Deja tus bendiciones en ferias virtuales donde las tradiciones siguen vivas."],
+	  ["Origen de los caracteres, forma del arte", "Traza el nacimiento de la escritura china y percibe el ritmo de la estética oriental."],
+	  ["Sendero herbal, fuente de sanación", "Redescubre la armonía entre la naturaleza y la vida mediante la medicina ancestral."],
+	  ["Kung fu chino, armonía en movimiento", "Sumérgete en el arte marcial y siente el equilibrio entre fuerza y espíritu."],
+	  ["Melodías antiguas, resonancia del cielo y la tierra", "Escucha los sonidos eternos que vibran con todo lo existente."],
+	  ["Gastronomía china, cortesía hacia el mundo", "Disfruta de la elegancia y calidez de la vida oriental en un banquete virtual."],
+	  ["Maestría nacional, estética del Oriente", "Entra en el mundo artesanal y contempla la belleza eterna de la creación china."]
+	]
+
   },
   "it": {
     "name": "Italiano",
@@ -158,17 +165,18 @@
     "enter": "Inizia il viaggio 3D",
 	"copyright": "© 2025 LoongBreath International Ltd. - Tutti i diritti riservati.", 
 	"powered": "Un progetto di metaverso culturale di LoongBreath",
-    "grid": [
-      ["Esplora i templi antichi", "Tour immersivi tra templi millenari"],
-      ["Crea il tuo sé digitale", "Diventa un avatar digitale per la pratica spirituale"],
-      ["Rituali e mercato", "Prega, esprimi desideri ed esplora il mercato virtuale"],
-      ["Maestri IA e saggezza", "Consulta i maestri IA per intuizioni e consigli"],
-      ["Patrimonio immateriale", "Scopri la bellezza del patrimonio culturale immateriale"],
-      ["Imparare il cinese", "Impara il mandarino e scopri la sua saggezza"],
-      ["Assaporare la cucina imperiale", "Gusta le prelibatezze reali"],
-      ["Vivere la musica antica", "Immergiti nelle melodie ancestrali"],
-      ["Scoprire l’artigianato antico", "Esplora l’arte tradizionale raffinata"]
-    ]
+	"grid": [
+	  ["Templi millenari, viaggio dell’illuminazione", "Entra nei templi virtuali e percepisci la saggezza e la serenità di millenni."],
+	  ["La via della natura, la saggezza che si desta in Oriente", "Scopri la filosofia del Tao e del Buddhismo attraverso il tuo sé digitale."],
+	  ["Accendi un desiderio, eredita l’intangibile", "Lascia le tue benedizioni nelle fiere virtuali dove le tradizioni prendono vita."],
+	  ["Origine dei caratteri, forma dell’arte", "Ripercorri la nascita della scrittura cinese e senti il ritmo dell’estetica orientale."],
+	  ["Sentiero delle erbe, fonte di guarigione", "Ritrova l’armonia tra natura e vita grazie alla medicina e alla filosofia antiche."],
+	  ["Kung fu cinese, armonia tra moto e quiete", "Immergiti nelle arti marziali e percepisci l’equilibrio tra forza e spirito."],
+	  ["Antiche melodie, risonanza di cielo e terra", "Ascolta i suoni senza tempo che vibrano in un’unica armonia universale."],
+	  ["Cucina cinese, cortesia verso il mondo", "Assapora l’eleganza e il calore della vita orientale in un banchetto virtuale."],
+	  ["Arte dei maestri, estetica dell’Oriente", "Entra nel mondo dell’artigianato e contempla la bellezza eterna della creazione cinese."]
+	]
+
   },
   "ar": {
     "name": "العربية",
@@ -177,17 +185,18 @@
     "enter": "ابدأ الرحلة ثلاثية الأبعاد",
 	"copyright": "© 2025 شركة لونغ بريس الدولية المحدودة - جميع الحقوق محفوظة.", 
 	"powered": "مشروع ميتافيرس ثقافي من لونغ بريس",
-    "grid": [
-      ["استكشاف المعابد القديمة", "جولات غامرة عبر المعابد التاريخية"],
-      ["أنشئ ذاتك الرقمية", "تحول إلى صورة رقمية لممارسة روحية"],
-      ["الطقوس والسوق", "صلّ، وتمنى، واستكشف السوق الافتراضي"],
-      ["أساتذة الذكاء الاصطناعي والحكمة", "استشر أساتذة الذكاء الاصطناعي للحصول على الإلهام والمعرفة"],
-      ["التراث غير المادي", "اختبر جمال التراث الثقافي غير المادي"],
-      ["تعلم الصينية", "تعلم الماندرين واكتشف حكمتها"],
-      ["تذوق المأكولات الإمبراطورية", "استمتع بالمأكولات الملكية"],
-      ["اختبر الموسيقى القديمة", "انغمس في الألحان القديمة"],
-      ["اكتشف الحرف القديمة", "استكشف فنون الحرف التقليدية"]
-    ]
+	"grid": [
+	  ["المعابد العريقة، رحلة نحو التنوير", "تجوّل في المعابد الافتراضية واشعر بحكمة وهدوء آلاف السنين."],
+	  ["طريق الطبيعة، الحكمة المستيقظة في الشرق", "اكتشف فلسفة الطاوية والبوذية من خلال كيانك الرقمي."],
+	  ["أشعل أمنيتك، وارث التراث اللامادي", "اترك بركاتك في الأسواق الافتراضية حيث تعيش التقاليد وتستمر."],
+	  ["أصل الحروف، شكل الفن", "تتبّع ولادة الكتابة الصينية واشعر بإيقاع الجمال الشرقي."],
+	  ["طريق الأعشاب، مصدر الشفاء", "أعد اكتشاف الانسجام بين الطبيعة والحياة من خلال الطب والفلسفة القديمة."],
+	  ["كونغ فو الصيني، تناغم الحركة والسكون", "ادخل عالم الفنون القتالية واشعر بتوازن القوة والروح."],
+	  ["أنغام قديمة، صدى السماء والأرض", "استمع إلى الأصوات الخالدة التي تهتزّ بتناغم مع الكون."],
+	  ["المأكولات الصينية، ضيافة نحو العالم", "استمتع بأناقة ودفء الحياة الشرقية في وليمة افتراضية."],
+	  ["حرف الأمة العظيمة، جمالية الشرق", "ادخل عالم الحرف اليدوية وتأمل الجمال الأبدي للإبداع الصيني."]
+	]
+
   },
   "pt": {
     "name": "Português",
@@ -196,16 +205,17 @@
     "enter": "Iniciar jornada 3D",
 	"copyright": "© 2025 LoongBreath International Ltd. - Todos os direitos reservados.", 
 	"powered": "Um projeto de metaverso cultural da LoongBreath",
-    "grid": [
-      ["Explorar templos antigos", "Passeios imersivos por templos milenares"],
-      ["Criar seu eu digital", "Transforme-se em um avatar digital para a prática espiritual"],
-      ["Rituais e mercado", "Ore, faça desejos e explore o mercado virtual"],
-      ["Mestres de IA e sabedoria", "Consulte mestres de IA para orientação e visão"],
-      ["Patrimônio imaterial", "Experimente a beleza do patrimônio cultural imaterial"],
-      ["Aprender chinês", "Aprenda mandarim e descubra sua sabedoria"],
-      ["Provar a culinária imperial", "Saboreie as iguarias reais"],
-      ["Vivenciar a música antiga", "Mergulhe em melodias ancestrais"],
-      ["Descobrir o artesanato antigo", "Explore o trabalho artesanal tradicional"]
-    ]
+	"grid": [
+	  ["Templos milenares, jornada do despertar", "Caminhe por templos virtuais e sinta a sabedoria e a serenidade de milênios."],
+	  ["O caminho da natureza, sabedoria que desperta no Oriente", "Explore a filosofia do Tao e do Budismo através do seu eu digital."],
+	  ["Acenda um desejo, herde o intangível", "Deixe suas bênçãos em feiras virtuais onde tradições e artes continuam vivas."],
+	  ["Origem dos caracteres, forma da arte", "Acompanhe o nascimento da escrita chinesa e sinta o ritmo da estética oriental."],
+	  ["Caminho das ervas, fonte de cura", "Redescubra a harmonia entre a natureza e a vida por meio da medicina antiga."],
+	  ["Kung Fu chinês, harmonia em movimento", "Mergulhe nas artes marciais e sinta o equilíbrio entre força e espírito."],
+	  ["Melodias antigas, ressonância entre céu e terra", "Ouça sons eternos que ecoam no vazio, onde tudo vibra em harmonia."],
+	  ["Culinária chinesa, cortesia ao mundo", "Saboreie a elegância e o calor da vida oriental em um banquete virtual."],
+	  ["Mestres artesãos, estética do Oriente", "Entre no mundo do artesanato e testemunhe a beleza eterna da criação chinesa."]
+	]
+
   }
 }

@@ -275,6 +275,93 @@ body {
   color: #fff;
 }
 
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #000;
+}
+
+.img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.img-wrap img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.img-front {
+  opacity: 1;
+  z-index: 2;
+}
+
+.img-back {
+  opacity: 0;
+  z-index: 1;
+}
+
+
+
+/* 图片层 */
+.grid-item img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out; /* 淡入淡出时间0.2秒 */
+  z-index: 0;
+}
+
+.grid-item img.fade-out {
+  opacity: 0;
+}
+
+/* 标题在上方 */
+.grid-item h3 {
+  position: absolute;
+  top: 0px; /* 控制标题的垂直位置 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 4px 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); /* 加强阴影以增强可读性 */
+}
+
+
+/* 副标题保持底部 */
+.grid-item p {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 6px 8px;
+  font-size: 0.9em;
+  color: #ccc;
+  text-align: center;
+  border-radius: 4px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+
+
   </style>
   
  <script src="https://cdn.counter.dev/script.js" data-id="3f67edbc-5578-4662-b983-38498e33c9c4" data-utcoffset="8"></script> 
@@ -306,7 +393,93 @@ body {
 </div>
 
 
-  <div class="grid" id="grid"></div>
+<!-- 固定九宫格结构 -->
+<div class="grid" id="grid">
+
+  <div class="grid-item" data-grid="0">
+    <div class="img-wrap">
+      <img class="img-front" src="images/demo1.jpg" alt="">
+      <img class="img-back" src="images/demo1-B.jpg" alt="">
+    </div>
+    <h3></h3>
+    <p></p>
+  </div>
+
+  <div class="grid-item" data-grid="2">
+    <div class="img-wrap">
+      <img class="img-front" src="images/demo3.jpg" alt="">
+      <img class="img-back" src="images/demo3-B.jpg" alt="">
+    </div>
+    <h3></h3>
+    <p></p>
+  </div>
+
+  <div class="grid-item" data-grid="3">
+    <div class="img-wrap">
+      <img class="img-front" src="images/demo4.jpg" alt="">
+      <img class="img-back" src="images/demo4-B.jpg" alt="">
+    </div>
+    <h3></h3>
+    <p></p>
+  </div>
+
+  <div class="grid-item" data-grid="6">
+    <div class="img-wrap">
+      <img class="img-front" src="images/demo7.jpg" alt="">
+      <img class="img-back" src="images/demo7-B.jpg" alt="">
+    </div>
+    <h3></h3>
+    <p></p>
+  </div>
+
+  <div class="grid-item" data-grid="7">
+    <div class="img-wrap">
+      <img class="img-front" src="images/demo8.jpg" alt="">
+      <img class="img-back" src="images/demo8-B.jpg" alt="">
+    </div>
+    <h3></h3>
+    <p></p>
+  </div>
+
+  <div class="grid-item" data-grid="1">
+    <div class="img-wrap">
+      <img class="img-front" src="images/demo2.jpg" alt="">
+      <img class="img-back" src="images/demo2-B.jpg" alt="">
+    </div>
+    <h3></h3>
+    <p></p>
+  </div>
+
+  <div class="grid-item" data-grid="8">
+    <div class="img-wrap">
+      <img class="img-front" src="images/demo9.jpg" alt="">
+      <img class="img-back" src="images/demo9-B.jpg" alt="">
+    </div>
+    <h3></h3>
+    <p></p>
+  </div>
+
+  <div class="grid-item" data-grid="5">
+    <div class="img-wrap">
+      <img class="img-front" src="images/demo6.jpg" alt="">
+      <img class="img-back" src="images/demo6-B.jpg" alt="">
+    </div>
+    <h3></h3>
+    <p></p>
+  </div>
+
+  <div class="grid-item" data-grid="4">
+    <div class="img-wrap">
+      <img class="img-front" src="images/demo5.jpg" alt="">
+      <img class="img-back" src="images/demo5-B.jpg" alt="">
+    </div>
+    <h3></h3>
+    <p></p>
+  </div>
+
+</div>
+
+
 
 <footer>
   <div data-i18n="copyright"></div>
@@ -320,59 +493,105 @@ body {
 </footer>
 
 
+<script>
+let translations = {};
+let currentLang = localStorage.getItem("lang") || "en";
+let imageIntervals = [];
 
-  <script>
-    let translations = {};
-    let currentLang = localStorage.getItem("lang") || "en";
+async function loadLang() {
+  const res = await fetch("lang.json");
+  translations = await res.json();
+  applyLang(currentLang);
+  buildLangButtons();
+}
 
-    async function loadLang() {
-      const res = await fetch("lang.json");
-      translations = await res.json();
-      applyLang(currentLang);
-      buildLangButtons();
-    }
+function clearImageIntervals() {
+  imageIntervals.forEach(id => clearInterval(id));
+  imageIntervals = [];
+}
 
-    function applyLang(lang) {
-      const data = translations[lang];
-      if (!data) return;
+function applyLang(lang) {
+  const data = translations[lang];
+  if (!data) return;
 
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (data[key]) el.textContent = data[key];
-      });
+  // 清理旧动画循环
+  clearImageIntervals();
 
-      const grid = document.getElementById("grid");
-      grid.innerHTML = "";
-      data.grid.forEach((item, i) => {
-        grid.innerHTML += `
-          <div class="grid-item">
-            <img src="images/demo${i+1}.jpg" alt="">
-            <h3>${item[0]}</h3>
-            <p>${item[1]}</p>
-          </div>`;
-      });
-    }
+  // 更新其他文字
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (data[key]) el.textContent = data[key];
+  });
 
-    function setLang(lang) {
-      currentLang = lang;
-      localStorage.setItem("lang", lang);
-      applyLang(lang);
-    }
+  // ✅ 按 data-grid 更新九宫格标题与副标题
+  const items = document.querySelectorAll(".grid-item");
+  items.forEach(el => {
+    const index = parseInt(el.getAttribute("data-grid"));
+    if (!data.grid[index]) return;
+    el.querySelector("h3").textContent = data.grid[index][0];
+    el.querySelector("p").textContent = data.grid[index][1];
+  });
 
-    function buildLangButtons() {
-      const container = document.getElementById("langButtons");
-      container.innerHTML = "";
-      const langs = Object.keys(translations);
-      langs.forEach(l => {
-        const btn = document.createElement("button");
-        btn.className = "lang-btn";
-        btn.textContent = translations[l].name;
-        btn.onclick = () => setLang(l);
-        container.appendChild(btn);
-      });
-    }
+  // ✅ 重置图片回主图，再启动淡入淡出
+items.forEach(el => {
+  const front = el.querySelector(".img-front");
+  const back = el.querySelector(".img-back");
+  let showingMain = true;
+  const startDelay = Math.random() * 2000;
 
-    loadLang();
-  </script>
+  // 路径确保正确
+  const mainImg = front.src.replace(/-B\.jpg$/i, ".jpg");
+  const altImg = mainImg.replace(/\.jpg$/i, "-B.jpg");
+  front.src = mainImg;
+  back.src = altImg;
+
+  // 明确动画时长
+  front.style.transition = "opacity 1.5s ease-in-out";
+  back.style.transition = "opacity 1.5s ease-in-out";
+
+  setTimeout(() => {
+    const intervalId = setInterval(() => {
+      if (showingMain) {
+        back.style.opacity = 1;
+        // 🔧 强制 reflow（防止跳帧）
+        void back.offsetWidth;
+        front.style.opacity = 0;
+      } else {
+        front.style.opacity = 1;
+        void front.offsetWidth;
+        back.style.opacity = 0;
+      }
+      showingMain = !showingMain;
+    }, 3000 + Math.random() * 3000);
+    imageIntervals.push(intervalId);
+  }, startDelay);
+});
+
+
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem("lang", lang);
+  applyLang(lang);
+}
+
+function buildLangButtons() {
+  const container = document.getElementById("langButtons");
+  container.innerHTML = "";
+  const langs = Object.keys(translations);
+  langs.forEach(l => {
+    const btn = document.createElement("button");
+    btn.className = "lang-btn";
+    btn.textContent = translations[l].name;
+    btn.onclick = () => setLang(l);
+    container.appendChild(btn);
+  });
+}
+
+loadLang();
+</script>
+
+
 </body>
 </html>
